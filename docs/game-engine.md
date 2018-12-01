@@ -16,7 +16,10 @@
 - If a word is created by a player, the word is then queried against the NPM database of packages
     - If the word is an exact match, score of the letters are negated from the player's total score
     - If the word is not a match, score is added to the player's total score
-    - Otherwise, if the word is a partial match, user's score remains unchanged.
+    - Otherwise, if the word is a partial match, player's score remains unchanged
+        - Partial matches are only computed from the perspective of guessed word - a package needs to exist that _contains_ the entire guessed word for it to be a partial match
+        - Example: If the word guessed is `zulu` and there exists a package called `zulum`, then it's a partial match
+        - Example: If the word guessed is `zulum` and there exists a package called `zulu`, then it's not a partial match, and the player gets full score
 - At the end of a player's turn, if they have fewer than **10** letters in their inventory, the game refills the letters back to **10**.
     - Same letter generation logic as above.
     
