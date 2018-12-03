@@ -13,7 +13,7 @@
     - Create a [pronounceable](https://github.com/lukem512/pronounceable) word
     - Take the turn to swap their letters (any amount)
     - Skip their turn
-- If a word is created by a player, the word is then queried against the NPM database of packages
+- If a word is created by a player, the word is then queried against the NPM database of packages ([NPM Registry API docs](https://github.com/npm/registry/blob/master/docs/REGISTRY-API.md))
     - If the word is an exact match, score of the letters are negated from the player's total score
     - If the word is not a match, score is added to the player's total score
     - Otherwise, if the word is a partial match, player's score remains unchanged
